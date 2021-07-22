@@ -6,7 +6,7 @@ module.exports = {
     minArgs:1,
     expectedArgs: '<query> <branch>',
     description: "Fetches Stuff The Discord.js Documentation.",
-    callback: async({ message, channel, args, text, client, prefix }) => {
+    callback: async({ args}) => {
         const [query] = args
         let branch;
         if(query === "master") branch = "master";
