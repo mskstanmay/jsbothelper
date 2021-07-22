@@ -1,5 +1,5 @@
 FROM node:14
-RUN mkdir - /user/src/
+RUN mkdir -p/user/src/
 WORKDIR /user/src/
 COPY package*.json ./
 COPY . .
