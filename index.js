@@ -11,7 +11,6 @@ client.on("ready", () => {
   console.log(client.user.tag)
   new WOKCommands(client, {
     commandsDir: "commands",
-    featuresDir:"events",
     testServers: ["731206423878434877","793077174122315797"],
     showWarns: false,
     ignoreBots:true,
