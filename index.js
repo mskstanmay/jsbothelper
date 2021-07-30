@@ -6,7 +6,7 @@ const client = new Client({ partials: ["MESSAGE", "REACTION"] });
 client.on("ready", () => {
   client.user.setActivity("Js Bot Official", { type: "WATCHING" });
   const gc = new GCommands(client, {
-    //  cmdDir: "cmds/",
+    cmdDir: "cmds/",
     cmdDir: "test/",
     eventDir: "evts/",
     language: "english",
