@@ -1,5 +1,4 @@
 const { MessageEmbed } = require("discord.js");
-const e = require("express");
 const { Event } = require("gcommands");
 const { MessageButton, MessageActionRow } = require("gcommands");
 module.exports = class Cbutton extends Event {
