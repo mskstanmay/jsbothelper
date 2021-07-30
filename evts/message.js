@@ -1,4 +1,4 @@
-const {  MessageEmbed } = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 const { Event } = require("gcommands");
 const { MessageActionRow, MessageButton } = require("gcommands");
 module.exports = class Msgevt extends Event {
@@ -24,10 +24,7 @@ module.exports = class Msgevt extends Event {
         },
       });
     }
-    if (message.channel.id == "752005991180009523") {
-      //return;
-      //754000682171891743
-
+    if (message.channel.id == "754000682171891743") {
       const acceptBTN = new MessageButton()
         .setLabel("APPROVE")
         .setStyle("green")
@@ -41,30 +38,34 @@ module.exports = class Msgevt extends Event {
         .setStyle("grey")
         .setID("suggestion_delete");
 
-      const interactiveButtons = new MessageActionRow()
-      .addComponents([
+      const interactiveButtons = new MessageActionRow().addComponents([
         acceptBTN,
         denyBTN,
         delBTN,
       ]);
-const embed = new MessageEmbed()
-.setColor("050505")
-.setDescription(`\n${message.content}`)
-.setTitle(`Suggestion | Status : Pending`)
-.setFooter(`${message.author.tag} | ${message.author.id}`,message.author.displayAvatarURL({ dynamic: true }))
-.setTimestamp()
-await message.delete();
+      const embed = new MessageEmbed()
+        .setColor("050505")
+        .setDescription(`\n${message.content}`)
+        .setTitle(`Suggestion | Status : Pending`)
+        .setFooter(
+          `${message.author.tag} | ${message.author.id}`,
+          message.author.displayAvatarURL({ dynamic: true })
+        )
+        .setTimestamp();
+      await message.delete();
       message.channel.send({
-        embeds:[{
-          color: "000000",
-          title: `Suggestion | Status : Pending`,
-         description: `\n\`\`\`\n${message.content}\`\`\``,
-          footer: {
-            text: `${message.author.tag} | ${message.author.id}`,
-            icon_url: message.author.displayAvatarURL({ dynamic: true }),
+        embeds: [
+          {
+            color: "000000",
+            title: `Suggestion | Status : Pending`,
+            description: `\n\`\`\`\n${message.content}\`\`\``,
+            footer: {
+              text: `${message.author.tag} | ${message.author.id}`,
+              icon_url: message.author.displayAvatarURL({ dynamic: true }),
+            },
+            timestamps: new Date(),
           },
-          timestamps: new Date(),
-        }],
+        ],
         components: [interactiveButtons],
       });
     }
