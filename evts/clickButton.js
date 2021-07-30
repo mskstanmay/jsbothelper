@@ -18,6 +18,21 @@ module.exports = class Cbutton extends Event {
       "suggestion_delete",
     ];
     if (suggestionsystem_buttons.includes(button.id)) {
+      if (button.clicker.user.id != "685101975385276469") {
+        try {
+          return message.author
+            .send(
+              `Approving/Disapproving of suggestions is only for MsksTanmaY`
+            )
+            .then((n) => n.delete({ timeout: 15000 }));
+        } catch (error) {
+          return message
+            .reply(
+              `Approving/Disapproving of suggestions is only for MsksTanmaY`
+            )
+            .then((n) => n.delete({ timeout: 15000 }));
+        }
+      }
       const acceptBTN = new MessageButton()
         .setLabel("APPROVE")
         .setStyle("green")
