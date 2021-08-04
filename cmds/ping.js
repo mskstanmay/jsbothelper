@@ -10,7 +10,7 @@ module.exports = class Ping extends Command {
     });
   }
 
-  async run({ respond }) {
+  async run({ respond,client }) {
     respond(`${client.ws.ping}ms`);
   }
 };
