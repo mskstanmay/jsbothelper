@@ -19,7 +19,7 @@ module.exports = class Cbutton extends Event {
     if (suggestionsystem_buttons.includes(button.id)) {
       if (button.clicker.user.id != "685101975385276469") {
         try {
-          return message.author
+          return button.clicker.user
             .send(
               `Approving/Disapproving of suggestions is only for MsksTanmaY`
             )
