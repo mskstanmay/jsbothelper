@@ -8,7 +8,7 @@ module.exports = class Docs extends Command {
       name: "docs",
       description: "Fetches Stuff The Discord.js Documentation.",
       guildOnly: "731206423878434877",
-      args: [
+      choices: [
         {
           name: "query",
           type: ArgumentType.STRING,
