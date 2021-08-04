@@ -43,15 +43,6 @@ module.exports = class Msgevt extends Event {
         denyBTN,
         delBTN,
       ]);
-      const embed = new MessageEmbed()
-        .setColor("050505")
-        .setDescription(`\n${message.content}`)
-        .setTitle(`Suggestion | Status : Pending`)
-        .setFooter(
-          `${message.author.tag} | ${message.author.id}`,
-          message.author.displayAvatarURL({ dynamic: true })
-        )
-        .setTimestamp();
       await message.delete();
       message.channel.send({
         embeds: [
