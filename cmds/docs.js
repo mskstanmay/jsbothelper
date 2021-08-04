@@ -8,7 +8,7 @@ module.exports = class Docs extends Command {
       name: "docs",
       description: "Fetches Stuff The Discord.js Documentation.",
       guildOnly: "731206423878434877",
-      choices: [
+      args: [
         {
           name: "query",
           type: ArgumentType.STRING,
@@ -26,7 +26,7 @@ module.exports = class Docs extends Command {
   }
 
   async run({ client, respond},args ) {
-    if (args[0].toLowerCase() != "master" && args[0].toLowerCase() != "stable")
+    if (args[0] && args[0].toLowerCase() != "master" && args[0].toLowerCase() != "stable")
       return respond({
         content: "Please Choose Stable/Master Branch",
         ephemeral: true,
