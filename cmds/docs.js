@@ -25,7 +25,7 @@ module.exports = class Docs extends Command {
     });
   }
 
-  async run({ client, respond, args }) {
+  async run({ client, respond},args ) {
     if (args[0].toLowerCase() != "master" && args[0].toLowerCase() != "stable")
       return respond({
         content: "Please Choose Stable/Master Branch",
